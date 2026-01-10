@@ -1,6 +1,6 @@
 import { assets } from "../assets/assets";
 
-const Hero = () => {
+const Header = () => {
   return (
     <div className="flex flex-col justify-center items-center text-center mt-20">
       <div className="flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-[#5044E51A] text-[#5044E5] text-sm">
@@ -19,4 +19,4 @@ const Hero = () => {
   );
 }
 
-export default Hero
+export default Header;

@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="px-5 sm:px-[1vw] md:px-[3vw] lg:px-[5vw]">
       <div className="flex justify-between items-center py-5 mx-10">
         <Link to="/">
           <h2 className="text-2xl">Logo</h2>
