@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+.description-text { font-size: 15px;  }
+
+.description-text p { margin-bottom: 16px; color: #292929; }
+
+.description-text h1 { font-size: 36px; font-weight: 700; color: #252525 !important; margin: 32px 0; }
+
+.description-text h2 { font-size: 22px; font-weight: 700; color: #252525 !important; margin: 24px 0; }
+
+.description-text h3 { font-size: 18px; font-weight: 600; color: #333333 !important; margin: 20px 0; }
+
+.description-text h4 { font-size: 16px; font-weight: 500; color: #444444 !important; margin: 16px 0; }
+
+.description-text h5 { font-size: 14px; font-weight: 400; color: #555555 !important; margin: 12px 0; }
+
+.description-text h6 { font-size: 12px; font-weight: 400; color: #666666 !important; margin: 8px 0; }
+
+.description-text strong { font-weight: 700; }
+
+.description-text ol { margin-left: 30px; list-style-type: decimal; }
+
+.description-text ul { margin-left: 30px; list-style-type: disc; }
+
+.description-text li { margin-bottom: 8px; }
+
+.description-text a { color: #007AFF }

@@ -26,7 +26,7 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="text-center my-5">&copy;Copyright 2025 © QuickBlog All Right Reserved.</p>
+      <p className="text-center my-3">Copyright 2025 © ReadNest All Right Reserved.</p>
     </div>
   );
 }
