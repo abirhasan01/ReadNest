@@ -1,8 +1,10 @@
 import dashboard_icon from "./dashboard.png";
 import poster1 from "./poster.png";
+import upload_area from "./upload_area.svg";
 
 export const assets = {
-    dashboard_icon
+    dashboard_icon,
+    upload_area
 }
 
 export const blog_data = [

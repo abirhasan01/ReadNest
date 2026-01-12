@@ -3,7 +3,7 @@ import { assets } from "../assets/assets";
 
 const SideBar = () => {
   return (
-    <div className="sm:w-[20%] w-[10%] min-h-screen border-r-1 bg-white">
+    <div className="sm:w-[20%] w-[10%] min-h-screen border-r bg-white">
       <div className="flex flex-col pt-6 text-[15px]">
         <NavLink
           to="/"
