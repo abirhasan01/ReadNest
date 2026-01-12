@@ -19,9 +19,9 @@ function App() {
         <>
           <Navber />
           <hr />
-          <div className="flex w-full">
+          <div className="flex w-full bg-gray-100">
             <SideBar />
-            <div className="w-[70%] mx-auto ml-[max(5vw, 25px)] my-8">
+            <div className="w-[70%] ml-[3vw] my-10">
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/add" element={<AddBlog />} />
