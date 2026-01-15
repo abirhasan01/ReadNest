@@ -20,6 +20,7 @@ const adminLogin = async (req, res) => {
 
         res.status(200).json({
             success: true,
+            message: "Login Successfull",
             token
         })
 
@@ -63,7 +64,44 @@ const addBlog = async (req, res) => {
     }
 }
 
-module.exports = {
-    adminLogin,
-    addBlog
+const blogList = async (req, res) => {
+    try {
+        
+        const allBlog = await BlogModel.find()
+        res.json({
+            success: true,
+            allBlog
+        })
+
+    } catch (error) {
+        console.log(error);
+        res.json({
+          success: false,
+          message: error.message,
+        });
+    }
 }
+const removeBlog = async (req, res) => {
+    try {
+        const { id } = req.body
+        await BlogModel.findByIdAndRemove(id)
+        res.json({
+            success: true,
+            message: "Remove Successfull"
+        })
+        
+    } catch (error) {
+        console.log(error);
+        res.json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
+module.exports = {
+  adminLogin,
+  addBlog,
+  blogList,
+  removeBlog,
+};
