@@ -37,7 +37,7 @@ function App() {
         <Login setToken={setToken} />
       ) : (
         <>
-          <Navber />
+          <Navber setToken={setToken} />
           <hr />
           <div className="flex w-full bg-gray-100">
             <SideBar />

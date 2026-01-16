@@ -37,7 +37,11 @@ const AddBlog = ({ token }) => {
         setSubTitle("")
         setDescription("")
         setCategory("")
-        setIsPublished("")
+        setIsPublished(false)
+
+        if(quillRef.current){
+          quillRef.current.setText("")
+        }
       } else {
         toast.error(res.data.message)
       }

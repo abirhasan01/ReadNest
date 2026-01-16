@@ -1,5 +1,8 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { assets, dashboard_data } from "../assets/assets";
+import { toast } from "react-toastify";
+import { BackendUrl } from "../App";
+import { assets } from "../assets/assets";
 import BlogTableItem from "../components/BlogTableItem";
 
 const Dashboard = () => {
@@ -11,9 +14,20 @@ const Dashboard = () => {
     recentBlogs: []
   });
 
-  const fetchDashboardData = () => {
-      setDashboardData(dashboard_data);
-    };
+  const fetchDashboardData = async () => {
+    try {
+      const { data } = await axios.get(BackendUrl + "/api/blog/dashboard");
+      if (data.success) {
+        setDashboardData(data.dashboardData);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
+    }
+  };
+
   useEffect(()=> {
     fetchDashboardData()
   },[])
@@ -80,7 +94,7 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {dashboard_data.recentBlogs.map((blog, index) => {
+              {DashboardData.recentBlogs.map((blog, index) => {
                 return <BlogTableItem key={index} blog={blog} fetchBlogs={fetchDashboardData} index={index + 1} />
               })}
             </tbody>

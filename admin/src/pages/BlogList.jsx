@@ -1,5 +1,7 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { blog_data } from "../assets/assets";
+import { toast } from "react-toastify";
+import { BackendUrl } from "../App";
 import BlogTableItem from "../components/BlogTableItem";
 
 const BlogList = () => {
@@ -7,7 +9,17 @@ const BlogList = () => {
   const [blogList, setBlogList] = useState([])
 
   const fetchBlogs = async () => {
-    setBlogList(blog_data)
+    try {
+      const { data } = await axios.get(BackendUrl + "/api/blog/list");
+      if (data.success) {
+        setBlogList(data.allBlog);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log(error)
+      toast.error(error.message)
+    }
   }
 
   useEffect(()=> {
