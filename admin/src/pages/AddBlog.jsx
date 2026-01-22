@@ -29,7 +29,7 @@ const AddBlog = ({ token }) => {
       formData.append("category", category);
       formData.append("isPublished", isPublished);
 
-      const res = await axios.post(BackendUrl + "/api/blog/add-blog", formData, {headers: {token}});
+      const res = await axios.post(BackendUrl + "/api/admin/add-blog", formData, {headers: {token}});
       if(res.data.success){
         toast.success(res.data.message)
         setImage("")

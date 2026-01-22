@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const { data } = await axios.get(BackendUrl + "/api/blog/dashboard");
+      const { data } = await axios.get(BackendUrl + "/api/admin/dashboard");
       if (data.success) {
         setDashboardData(data.dashboardData);
       } else {
