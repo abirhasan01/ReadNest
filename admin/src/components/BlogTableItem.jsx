@@ -9,7 +9,7 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
     
     const removeData = async (id) => {
       try {
-        const { data } = await axios.post(BackendUrl + "/api/blog/remove", {
+        const { data } = await axios.post(BackendUrl + "/api/admin/remove", {
           id,
         });
         if (data.success) {
@@ -26,7 +26,7 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
      const updateToggle = async (id) => {
       try {
         const { data } = await axios.put(
-          BackendUrl + "/api/blog/update-toggle",
+          BackendUrl + "/api/admin/update-toggle",
           { id },
         );
         if (data.success) {
@@ -55,10 +55,18 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
         </p>
       </td>
       <td className="px-2 py-4 flex text-xs gap-3 flex-col items-center sm:flex-row sm:items-start">
-        <button onClick={()=> updateToggle(_id)} className="border px-2 py-1 mt-1 rounded cursor-pointer">
+        <button
+          onClick={() => updateToggle(_id)}
+          className="border px-2 py-1 mt-1 rounded cursor-pointer"
+        >
           {blog.isPublished ? "Unpublish" : "Published"}
         </button>
-        <img onClick={()=>removeData(_id)} className="w-8 h-8 cursor-pointer" src={assets.dashboard_icon} alt="" />
+        <img
+          onClick={() => removeData(_id)}
+          className="w-8 h-8 cursor-pointer"
+          src={assets.dashboard_icon}
+          alt=""
+        />
       </td>
     </tr>
   );

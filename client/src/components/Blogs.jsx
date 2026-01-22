@@ -1,29 +1,30 @@
 import { motion } from "motion/react";
-import { useState } from "react";
-import { blog_data, blogCategory } from "../assets/assets";
+import { useContext, useState } from "react";
+import { blogCategory } from "../assets/assets";
+import BlogContext from "../context/BlogContext";
 import BlogCard from "./BlogCard";
 
 const Blogs = () => {
 
     const [search, setSearch] = useState("")
     const [menu, setMenu] = useState("All")
-    const [data, setData] = useState(blog_data)
     const [showClear, setShowClear] = useState(false)
+    const { blogList, setBlogList, fetchAllBlogs } = useContext(BlogContext);
 
     const handleSubmit = (e) => {
       e.preventDefault();
       if(!search.trim()){
-        setData(blog_data)
+        setBlogList(blogList)
         setShowClear(false)
         return
       }
-      const filterData = blog_data.filter((blog) => blog.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
-      setData(filterData)
+      const filterData = blogList.filter((blog) => blog.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+      setBlogList(filterData)
       setShowClear(true)
     }
     const handleClear = () => {
       setSearch("")
-      setData(blog_data)
+      fetchAllBlogs()
       setShowClear(false)
     }
 
@@ -78,7 +79,7 @@ const Blogs = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-24 mx-5 sm:mx-12 xl:mx-20">
-        {data
+        {blogList
           .filter((blog) => (menu === "All" ? true : blog.category === menu))
           .map((blog) => (
             <BlogCard key={blog._id} blog={blog} />

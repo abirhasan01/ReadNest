@@ -4,8 +4,9 @@ const app = express()
 const PORT = process.env.PORT
 const cors = require("cors")
 const connectDB = require("./config/db")
-const blogRouter = require("./routes/blog.route")
 const connectCloudinary = require("./config/cloudinary")
+const adminRouter = require("./routes/admin.route")
+const clinetRouter = require("./routes/client.route")
 
 
 // ------------middleware & app config------------
@@ -19,7 +20,8 @@ app.use(express.urlencoded({extended: true}))
 app.get("/", (req, res)=> {
     res.send("API Working")
 })
-app.use("/api/blog", blogRouter)
+app.use("/api/admin", adminRouter)
+app.use("/api/blog", clinetRouter)
 
 app.listen(PORT, ()=> {
     console.log(`Server is running at localhost:${PORT}`)

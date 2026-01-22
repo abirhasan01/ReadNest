@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react"
+import axios from "axios"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { blog_data } from "../assets/assets"
+import BlogContext from "../context/BlogContext"
 
 const Blog = () => {
 
   const { id } = useParams()
   const [data, setData] = useState(null)
+  const { backendUrl } = useContext(BlogContext);
 
   const fetchBlogData = async () => {
-    const item = blog_data.find((blog) => blog._id === id);
-    setData(item);
+    const { data } = await axios.get(backendUrl + `/api/blog/single/${id}`);
+    console.log(data)
+    setData(data.blog);
   }
 
   useEffect(()=> {

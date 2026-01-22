@@ -10,7 +10,7 @@ const Login = ({ setToken }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(BackendUrl + "/api/blog/login", {email, password});
+      const res = await axios.post(BackendUrl + "/api/admin/login", {email, password});
       if(res.data.success){
         setToken(res.data.token)
         toast.success(res.data.message)

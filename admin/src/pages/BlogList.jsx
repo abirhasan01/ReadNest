@@ -10,7 +10,7 @@ const BlogList = () => {
 
   const fetchBlogs = async () => {
     try {
-      const { data } = await axios.get(BackendUrl + "/api/blog/list");
+      const { data } = await axios.get(BackendUrl + "/api/admin/list");
       if (data.success) {
         setBlogList(data.allBlog);
       } else {
@@ -33,7 +33,7 @@ const BlogList = () => {
         <table className="w-full text-sm text-gray-500">
           <thead className="text-xs text-gray-600 text-left uppercase">
             <tr>
-              <th scope="col" className="px-2 py-4 xl:px-6">
+              <th scope="col" className="px-2 py-4 xl:px-6 flex items-center justify-center">
                 #
               </th>
               <th scope="col" className="px-2 py-4">
