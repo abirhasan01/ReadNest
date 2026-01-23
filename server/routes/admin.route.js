@@ -1,5 +1,5 @@
 
-const { adminLogin, addBlog, blogList, removeBlog, getDashboardData, togglePublish } = require("../controllers/admin.controller")
+const { adminLogin, addBlog, blogList, removeBlog, getDashboardData, togglePublish, generateContent } = require("../controllers/admin.controller")
 const { adminAuth } = require("../middleware/adminAuth")
 const upload = require("../middleware/multer")
 
@@ -12,5 +12,6 @@ adminRouter.get("/list",  blogList)
 adminRouter.post("/remove",  removeBlog)
 adminRouter.get("/dashboard",  getDashboardData)
 adminRouter.put("/update-toggle",  togglePublish)
+adminRouter.post("/generate",  generateContent)
 
 module.exports = adminRouter;

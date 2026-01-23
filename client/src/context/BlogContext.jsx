@@ -8,6 +8,8 @@ export const BlogContextProvider = ({ children }) => {
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL;
     const [blogList, setBlogList] = useState([])
+  const [singleData, setSingleData] = useState(null);
+
 
     const fetchAllBlogs = async () => {
         try {
@@ -22,6 +24,12 @@ export const BlogContextProvider = ({ children }) => {
             toast.error(error.message)
         }
     }
+
+    const fetchSingleBlogData = async (id) => {
+      const { data } = await axios.get(backendUrl + `/api/blog/single/${id}`);
+      setSingleData(data.blog);
+    };
+
     useEffect(()=> {
         fetchAllBlogs()
     },[])
@@ -30,6 +38,7 @@ export const BlogContextProvider = ({ children }) => {
         backendUrl,
         fetchAllBlogs,
         blogList, setBlogList,
+        fetchSingleBlogData, singleData, setSingleData
     }
     return (
         <BlogContext.Provider value={value}>
