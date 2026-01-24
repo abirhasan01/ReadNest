@@ -1,10 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Navber = ({ setToken }) => {
   return (
     <div className="flex justify-between items-center mx-5 md:mx-[5vw] py-5">
-      <NavLink to="/" className="text-3xl cursor-pointer">Logo</NavLink>
+      <Link to="/">
+        <img className="w-20 h-15 cursor-pointer" src="/logo.png" alt="" />
+      </Link>
       <button
         onClick={() => {
           setToken("");

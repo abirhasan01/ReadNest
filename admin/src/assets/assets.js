@@ -1,11 +1,25 @@
+import add_icon from "./add.png";
+import comment_icon from "./comments.png";
+import cross_icon from "./cross.png";
 import dashboard_icon from "./dashboard.png";
+import dashboardBlogList from "./dashboardBlogList.png";
+import dashboardDraft_icon from "./dashboardDraft.png";
+import dashboardList from "./dashboardList.png";
+import list_icon from "./list.png";
 import poster1 from "./poster.png";
 import upload_area from "./upload_area.svg";
 
 export const assets = {
-    dashboard_icon,
-    upload_area
-}
+  dashboard_icon,
+  upload_area,
+  list_icon,
+  comment_icon,
+  add_icon,
+  cross_icon,
+  dashboardBlogList,
+  dashboardDraft_icon,
+  dashboardList,
+};
 
 export const blog_data = [
   {
