@@ -54,7 +54,7 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
           {blog.isPublished ? "Published" : "Unpublished"}
         </p>
       </td>
-      <td className="px-2 py-4 flex text-xs gap-3 flex-col items-center sm:flex-row sm:items-start">
+      <td className="px-2 py-4 flex text-xs gap-3 flex-col items-center sm:flex-row sm:items-center">
         <button
           onClick={() => updateToggle(_id)}
           className="border px-2 py-1 mt-1 rounded cursor-pointer"
@@ -63,8 +63,8 @@ const BlogTableItem = ({blog, fetchBlogs, index}) => {
         </button>
         <img
           onClick={() => removeData(_id)}
-          className="w-8 h-8 cursor-pointer"
-          src={assets.dashboard_icon}
+          className="w-6 h-6 mt-1 cursor-pointer hover:border rounded-full"
+          src={assets.cross_icon}
           alt=""
         />
       </td>

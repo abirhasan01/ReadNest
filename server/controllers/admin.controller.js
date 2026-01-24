@@ -2,6 +2,7 @@ require("dotenv").config()
 const jwt = require("jsonwebtoken")
 const { v2 : cloudinary } = require("cloudinary");
 const BlogModel = require("../models/blog.model");
+const main = require("../config/gemini");
 
 const adminLogin = async (req, res) => {
     try {
@@ -149,6 +150,27 @@ const togglePublish = async (req, res) => {
     }
 }
 
+const generateContent = async (req, res) => {
+    try {
+        const { prompt } = req.body
+        const content = await main(
+          prompt +
+            " Generate a blog content for this topic in simple text format starting with heading",
+        );
+        
+        res.json({
+            success: true,
+            content
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+          success: false,
+          message: error.message,
+        });
+    }
+}
+
 module.exports = {
   adminLogin,
   addBlog,
@@ -156,4 +178,5 @@ module.exports = {
   removeBlog,
   getDashboardData,
   togglePublish,
+  generateContent,
 };

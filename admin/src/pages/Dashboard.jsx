@@ -37,7 +37,7 @@ const Dashboard = () => {
       {/* dashboard data */}
       <div className="flex flex-wrap gap-4">
         <div className="flex items-center min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
-          <img className="w-15" src={assets.dashboard_icon} alt="" />
+          <img className="w-15" src={assets.dashboardBlogList} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-500">
               {DashboardData.blogs}
@@ -46,7 +46,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex items-center min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
-          <img className="w-15" src={assets.dashboard_icon} alt="" />
+          <img className="w-15" src={assets.comment_icon} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-500">
               {DashboardData.comments}
@@ -55,7 +55,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex items-center min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
-          <img className="w-15" src={assets.dashboard_icon} alt="" />
+          <img className="w-15" src={assets.dashboardDraft_icon} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-500">
               {DashboardData.drafts}
@@ -68,7 +68,7 @@ const Dashboard = () => {
       {/* Latest Blogs */}
       <div className="">
         <div className="flex items-center m-4 mt-6 gap-3 text-gray-600">
-          <img className="w-6" src={assets.dashboard_icon} alt="" />
+          <img className="w-6" src={assets.dashboardList} alt="" />
           <p>Latest Blogs</p>
         </div>
 
