@@ -33,7 +33,7 @@ function App() {
         theme="dark"
         transition={Zoom}
       />
-      {token === "" ? (
+      {token === true ? (
         <Login setToken={setToken} />
       ) : (
         <>
@@ -41,7 +41,7 @@ function App() {
           <hr />
           <div className="flex w-full bg-gray-100">
             <SideBar />
-            <div className="w-[70%] ml-[3vw] my-10">
+            <div className="w-[85%] sm:w-[70%] ml-[3vw] my-10">
               <Routes>
                 <Route path="/" element={<Dashboard token={token} />} />
                 <Route path="/add" element={<AddBlog token={token} />} />

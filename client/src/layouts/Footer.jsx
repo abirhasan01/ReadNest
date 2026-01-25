@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="bg-[#F8F9FD] h-full px-5 sm:px-[2vw] md:px-[3vw] lg:px-[5vw]">
       <div className="md:flex md:justify-between items-center text-center md:text-start">
         <div className="flex-1">
-          <h1 className="text-2xl pb-3 pt-10 md:pt-0 ">Logo</h1>
+          <img className="w-20 pb-3 pt-10 md:pt-0" src="/logo.png" alt="" />
           <p className="w-full md:max-w-md pr-5">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum unde
             quaerat eveniet cumque accusamus atque qui error quo enim fugiat?
@@ -26,7 +26,9 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="text-center my-3">Copyright 2025 © ReadNest All Right Reserved.</p>
+      <p className="text-center my-3">
+        Copyright 2025 © ReadNest All Right Reserved.
+      </p>
     </div>
   );
 }

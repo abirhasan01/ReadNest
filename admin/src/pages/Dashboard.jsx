@@ -36,8 +36,8 @@ const Dashboard = () => {
     <div>
       {/* dashboard data */}
       <div className="flex flex-wrap gap-4">
-        <div className="flex items-center min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
-          <img className="w-15" src={assets.dashboardBlogList} alt="" />
+        <div className="flex items-center min-w-30 sm:min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
+          <img className="w-8 sm:w-15" src={assets.dashboardBlogList} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-500">
               {DashboardData.blogs}
@@ -45,8 +45,8 @@ const Dashboard = () => {
             <p className="text-gray-400 font-light">Blogs</p>
           </div>
         </div>
-        <div className="flex items-center min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
-          <img className="w-15" src={assets.comment_icon} alt="" />
+        <div className="flex items-center min-w-30 sm:min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
+          <img className="w-8 sm:w-15" src={assets.comment_icon} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-500">
               {DashboardData.comments}
@@ -54,8 +54,8 @@ const Dashboard = () => {
             <p className="text-gray-400 font-light">Comments</p>
           </div>
         </div>
-        <div className="flex items-center min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
-          <img className="w-15" src={assets.dashboardDraft_icon} alt="" />
+        <div className="flex items-center min-w-30 sm:min-w-58 gap-4 p-4 bg-white rounded shadow cursor-pointer hover:scale-105 transition-all">
+          <img className="w-8 sm:w-15" src={assets.dashboardDraft_icon} alt="" />
           <div>
             <p className="text-xl font-semibold text-gray-500">
               {DashboardData.drafts}
@@ -95,7 +95,14 @@ const Dashboard = () => {
             </thead>
             <tbody>
               {DashboardData.recentBlogs.map((blog, index) => {
-                return <BlogTableItem key={index} blog={blog} fetchBlogs={fetchDashboardData} index={index + 1} />
+                return (
+                  <BlogTableItem
+                    key={index}
+                    blog={blog}
+                    fetchBlogs={fetchDashboardData}
+                    index={index + 1}
+                  />
+                );
               })}
             </tbody>
           </table>
