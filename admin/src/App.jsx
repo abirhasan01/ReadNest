@@ -33,7 +33,7 @@ function App() {
         theme="dark"
         transition={Zoom}
       />
-      {token === true ? (
+      {token === "" ? (
         <Login setToken={setToken} />
       ) : (
         <>
