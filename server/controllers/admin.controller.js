@@ -155,7 +155,7 @@ const generateContent = async (req, res) => {
         const { prompt } = req.body
         const content = await main(
           prompt +
-            " Generate a blog content for this topic in simple text format starting with heading",
+            " Generate a blog content for this topic in simple text format",
         );
         
         res.json({
