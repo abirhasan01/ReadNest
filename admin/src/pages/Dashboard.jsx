@@ -5,7 +5,7 @@ import { BackendUrl } from "../App";
 import { assets } from "../assets/assets";
 import BlogTableItem from "../components/BlogTableItem";
 
-const Dashboard = () => {
+const Dashboard = ({ token }) => {
 
   const [DashboardData, setDashboardData] = useState({
     blogs: 0,
@@ -16,7 +16,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const { data } = await axios.get(BackendUrl + "/api/admin/dashboard");
+      const { data } = await axios.get(BackendUrl + "/api/admin/dashboard", {headers: {token}});
       if (data.success) {
         setDashboardData(data.dashboardData);
       } else {
