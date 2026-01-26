@@ -8,6 +8,7 @@ const Button = () => {
   return (
     <button
       className="flex items-center bg-white px-3 py-1.5 sm:px-6 sm:py-2.5 rounded-full overflow-clip cursor-pointer"
+      onClick={() => window.open("https://readnest-admin.vercel.app/")}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
@@ -21,15 +22,18 @@ const Button = () => {
       ></motion.div>
       <motion.p
         animate={{
-            x: isHover ? -8 : 8,
-            color: isHover ? "#FFFFFF" : "#000000"
+          x: isHover ? -8 : 8,
+          color: isHover ? "#FFFFFF" : "#000000",
         }}
-      className="text-black text-xs sm:text-sm z-10">Admin Dashboard</motion.p>
+        className="text-black text-xs sm:text-sm z-10"
+      >
+        Admin Dashboard
+      </motion.p>
       <motion.div
         animate={{
-            x: isHover ? 0 : 24
+          x: isHover ? 0 : 24,
         }}
-      className="text-white z-10"
+        className="text-white z-10"
       >
         <FaArrowRight />
       </motion.div>
