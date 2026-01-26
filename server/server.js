@@ -24,5 +24,5 @@ app.use("/api/admin", adminRouter)
 app.use("/api/blog", clinetRouter)
 
 app.listen(PORT, ()=> {
-    console.log(`Server is running at localhost:${PORT}`)
+    console.log(`Server is running at http://localhost:${PORT}`);
 })
