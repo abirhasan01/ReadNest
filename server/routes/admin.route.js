@@ -9,9 +9,9 @@ const adminRouter = require("express").Router()
 adminRouter.post("/login", adminLogin)
 adminRouter.post("/add-blog", adminAuth ,upload.single("image"), addBlog)
 adminRouter.get("/list",  blogList)
-adminRouter.post("/remove", adminAuth ,removeBlog)
+adminRouter.post("/remove", removeBlog)
 adminRouter.get("/dashboard", adminAuth ,getDashboardData)
-adminRouter.put("/update-toggle", adminAuth ,togglePublish)
+adminRouter.put("/update-toggle", togglePublish)
 adminRouter.post("/generate", generateContent)
 
 module.exports = adminRouter;
