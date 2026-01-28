@@ -3,15 +3,18 @@ import { toast } from "react-toastify";
 import { BackendUrl } from "../App";
 import { assets } from "../assets/assets";
 
-const BlogTableItem = ({blog, fetchBlogs, index}) => {
+const BlogTableItem = ({blog, fetchBlogs, index,}) => {
     const { title, createdAt, _id} = blog
     const blogDate = new Date(createdAt).toDateString()
     
     const removeData = async (id) => {
       try {
-        const { data } = await axios.post(BackendUrl + "/api/admin/remove", {
-          id,
-        });
+        const { data } = await axios.post(
+          BackendUrl + "/api/admin/remove",
+          {
+            id,
+          },
+        );
         if (data.success) {
           toast.success(data.message);
           fetchBlogs();

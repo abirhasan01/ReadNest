@@ -133,6 +133,14 @@ const togglePublish = async (req, res) => {
     try {
         const {id} = req.body
         const selectedItem = await BlogModel.findById(id)
+
+        if (!selectedItem) {
+          return res.json({
+            success: false,
+            message: "Blog not found",
+          });
+        }
+        
         selectedItem.isPublished = !selectedItem.isPublished;
         await selectedItem.save()
 
